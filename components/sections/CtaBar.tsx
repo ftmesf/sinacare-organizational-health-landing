@@ -1,0 +1,51 @@
+import { Phone, CalendarCheck, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
+import { Button } from "@/components/ui/button";
+import { BrandRings } from "@/components/viz/BrandRings";
+
+export function CtaBar() {
+  return (
+    <section id="contact" className="py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="glass-panel relative overflow-hidden rounded-3xl bg-brand-primary/95 px-6 py-12 text-center sm:px-12">
+          <div className="brand-gradient-bg absolute inset-0 -z-10" />
+          <BrandRings className="pointer-events-none absolute -bottom-32 -left-24 -z-10 h-96 w-96 text-white opacity-15" />
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+            مدیریت سلامت شغلی سازمان خود را از امروز دیجیتال کنید
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-white/85 sm:text-base">
+            یک دموی ۱۵ دقیقه‌ای رایگان، کافی‌ست تا ببینید سیناکر چطور پرونده
+            طب کار سازمان شما را از کاغذ به داده تبدیل می‌کند.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="lg" className="h-11 bg-white px-6 text-base text-brand-primary hover:bg-white/90">
+              <a href="tel:02191002002">
+                <CalendarCheck size={18} />
+                درخواست دموی سازمانی
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-11 border-white/40 bg-transparent px-6 text-base text-white hover:bg-white/10 hover:text-white"
+            >
+              <a href="#brochure">
+                <DownloadSimple size={18} />
+                دریافت بروشور
+              </a>
+            </Button>
+          </div>
+
+          <a
+            href="tel:02191002002"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white"
+          >
+            <Phone size={16} />
+            ۰۲۱-۹۱۰۰۲۰۰۲
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
