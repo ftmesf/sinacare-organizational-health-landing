@@ -4,10 +4,10 @@ import { Reveal } from "@/components/Reveal";
 import type { IconName } from "@/lib/content/types";
 
 const imageByIcon: Partial<Record<IconName, string>> = {
-  HeartStraight: "/images/service-health-panel.png",
-  ChartLineUp: "/images/service-bi.png",
-  FileText: "/images/service-ocr.png",
-  Database: "/images/service-records.png",
+  HeartStraight: "/images/service-health-panel.jpg",
+  ChartLineUp: "/images/service-bi.jpg",
+  FileText: "/images/service-ocr.jpg",
+  Database: "/images/service-records.jpg",
 };
 
 export function CoreServices() {
