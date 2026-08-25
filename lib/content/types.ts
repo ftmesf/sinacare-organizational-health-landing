@@ -24,7 +24,8 @@ export type IconName =
   | "ChartPieSlice"
   | "Books"
   | "HourglassMedium"
-  | "Scan";
+  | "Scan"
+  | "MagnifyingGlass";
 
 export interface FeatureCard {
   icon: IconName;
@@ -32,8 +33,21 @@ export interface FeatureCard {
   description: string;
 }
 
+export type BenefitTone =
+  | "violet"
+  | "cyan"
+  | "emerald"
+  | "amber"
+  | "teal"
+  | "red"
+  | "indigo"
+  | "orange";
+
 export interface BenefitStat {
   icon: IconName;
   label: string;
-  metric?: string;
+  description: string;
+  tone: BenefitTone;
+  footerIcon: IconName;
+  footerLabel: string;
 }
