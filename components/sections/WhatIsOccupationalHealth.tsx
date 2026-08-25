@@ -1,22 +1,25 @@
-import { FeatureCard } from "@/components/viz/FeatureCard";
+import { TonedFeatureCard } from "@/components/viz/TonedFeatureCard";
 import { Reveal } from "@/components/Reveal";
-import type { FeatureCard as FeatureCardData } from "@/lib/content/types";
+import type { BenefitTone, FeatureCard as FeatureCardData } from "@/lib/content/types";
 
-const points: FeatureCardData[] = [
+const points: (FeatureCardData & { tone: BenefitTone })[] = [
   {
     icon: "Stethoscope",
+    tone: "cyan",
     title: "طب کار، نه فرهنگ‌سازمانی",
     description:
       "«سلامت سازمانی» در سیناکر به معنای طب کار دیجیتال است: نظارت بر سلامت شغلی، معاینات ادواری و تشخیص زودهنگام بیماری‌های ناشی از کار. این مفهوم را نباید با مباحث مدیریتیِ فرهنگ سازمانی یا رهبری اشتباه گرفت.",
   },
   {
     icon: "Scales",
+    tone: "indigo",
     title: "ریشه در الزام قانونی",
     description:
       "بر اساس قانون کار، انجام معاینات دوره‌ای شغلی و نگهداری سوابق پزشکی پرسنل برای کارفرما الزامی است. سیناکر همین وظیفه قانونی را دیجیتال، قابل‌پیگیری و قابل‌استناد می‌کند.",
   },
   {
     icon: "Database",
+    tone: "emerald",
     title: "یک پرونده، سه ذی‌نفع",
     description:
       "پرونده دیجیتال سلامت، فرد، پزشک طب کار و مدیر سازمان را به یک منبع داده واحد متصل می‌کند تا تصمیم‌های مدیریتی درباره سلامت نیروی کار، دقیق‌تر و مبتنی بر داده باشد.",
@@ -40,7 +43,7 @@ export function WhatIsOccupationalHealth() {
 
         <Reveal className="mt-12 grid gap-6 sm:grid-cols-3">
           {points.map((point) => (
-            <FeatureCard key={point.title} item={point} />
+            <TonedFeatureCard key={point.title} item={point} tone={point.tone} />
           ))}
         </Reveal>
       </div>
