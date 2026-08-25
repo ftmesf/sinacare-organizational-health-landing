@@ -104,3 +104,110 @@ export function OcrWidget() {
     </div>
   );
 }
+
+export function ReportsWidget() {
+  const rows = [
+    { unit: "واحد تولید", risk: "ریسک بالا", className: "text-red-600" },
+    { unit: "واحد فنی", risk: "ریسک متوسط", className: "text-amber-600" },
+    { unit: "واحد اداری", risk: "ریسک پایین", className: "text-emerald-600" },
+  ];
+  return (
+    <div className={panelClassName}>
+      <div className="flex items-center justify-between">
+        <Badge className="border-0 bg-red-100 text-red-700">۲ واحد پرریسک</Badge>
+        <span className="text-sm font-bold text-brand-fg">گزارش سلامت واحدها</span>
+      </div>
+      <div className="mt-4 space-y-2">
+        {rows.map((row) => (
+          <div
+            key={row.unit}
+            className="flex items-center justify-between rounded-lg bg-white p-3 text-sm shadow-sm"
+          >
+            <span className={`font-bold ${row.className}`}>{row.risk}</span>
+            <span className="text-brand-fg">{row.unit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function ChronicRiskWidget() {
+  const rows = [
+    { disease: "بیماری‌های قلبی‌عروقی", horizon: "۱۰ سال آینده", className: "text-brand-risk" },
+    { disease: "دیابت نوع ۲", horizon: "۸ سال آینده", className: "text-amber-600" },
+    { disease: "کبد چرب و فیبروز کبدی", horizon: "۶ سال آینده", className: "text-amber-600" },
+  ];
+  return (
+    <div className={panelClassName}>
+      <span className="text-xs font-bold text-brand-risk">پیش‌بینی ۱۰ ساله</span>
+      <p className="mt-1 text-sm font-bold text-brand-fg">احتمال بروز بیماری‌های مزمن</p>
+      <div className="mt-4 space-y-2">
+        {rows.map((row) => (
+          <div
+            key={row.disease}
+            className="flex items-center justify-between rounded-lg bg-white p-3 text-sm shadow-sm"
+          >
+            <span className={`font-bold ${row.className}`}>{row.horizon}</span>
+            <span className="text-brand-fg">{row.disease}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function ChallengeWidget() {
+  const ranks = [
+    { rank: "۱", team: "واحد تولید", score: "۲٬۴۵۰ امتیاز", rankClassName: "bg-amber-500" },
+    { rank: "۲", team: "واحد فنی", score: "۲٬۱۸۰ امتیاز", rankClassName: "bg-zinc-400" },
+    { rank: "۳", team: "واحد اداری", score: "۱٬۹۲۰ امتیاز", rankClassName: "bg-amber-700" },
+  ];
+  return (
+    <div className={panelClassName}>
+      <div className="flex items-center justify-between">
+        <Badge className="border-0 bg-amber-100 text-amber-700">هفته ۶</Badge>
+        <span className="text-sm font-bold text-brand-fg">رتبه‌بندی زنده چالش</span>
+      </div>
+      <div className="mt-4 space-y-2">
+        {ranks.map((r) => (
+          <div
+            key={r.rank}
+            className="flex items-center justify-between rounded-lg bg-white p-3 text-sm shadow-sm"
+          >
+            <span className="font-bold text-brand-fg">{r.score}</span>
+            <span className="flex items-center gap-2 text-brand-fg">
+              {r.team}
+              <span
+                className={`flex size-5 items-center justify-center rounded-full text-[10px] font-bold text-white ${r.rankClassName}`}
+              >
+                {r.rank}
+              </span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function MedicalCareWidget() {
+  return (
+    <div className={panelClassName}>
+      <div className="flex items-center justify-between">
+        <Badge className="border-0 bg-cyan-100 text-cyan-700">پاسخ داده‌شده</Badge>
+        <span className="text-sm font-bold text-brand-fg">پیگیری آنلاین پزشک</span>
+      </div>
+      <div className="mt-4 space-y-2">
+        <div className="rounded-lg bg-white p-3 text-sm shadow-sm">
+          <p className="text-xs text-muted-foreground">پرسش کاربر</p>
+          <p className="mt-1 text-brand-fg">فشار خونم بالا رفته، باید نگران باشم؟</p>
+        </div>
+        <div className="rounded-lg bg-white p-3 text-sm shadow-sm">
+          <p className="text-xs text-muted-foreground">پاسخ پزشک</p>
+          <p className="mt-1 text-brand-fg">مصرف نمک رو کم کنید و هفته بعد دوباره اندازه بگیرید.</p>
+        </div>
+      </div>
+    </div>
+  );
+}

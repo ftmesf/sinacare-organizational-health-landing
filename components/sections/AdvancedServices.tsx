@@ -1,12 +1,27 @@
 import { advancedServices } from "@/lib/content/services";
-import { FeatureCard } from "@/components/viz/FeatureCard";
-import { PhotoFeatureCard } from "@/components/viz/PhotoFeatureCard";
+import { ServiceShowcaseCard } from "@/components/viz/ServiceShowcaseCard";
+import {
+  ChallengeWidget,
+  ChronicRiskWidget,
+  MedicalCareWidget,
+  ReportsWidget,
+} from "@/components/viz/ServiceWidgets";
 import { Reveal } from "@/components/Reveal";
 import type { IconName } from "@/lib/content/types";
+import type { ReactNode } from "react";
 
-const imageByIcon: Partial<Record<IconName, string>> = {
-  Scan: "/images/service-chronic-risk.jpg",
-  Stethoscope: "/images/service-medical-care.jpg",
+const iconClassByIcon: Partial<Record<IconName, string>> = {
+  ClipboardText: "bg-orange-600",
+  Scan: "bg-brand-risk",
+  Trophy: "bg-amber-500",
+  Stethoscope: "bg-cyan-700",
+};
+
+const widgetByIcon: Partial<Record<IconName, ReactNode>> = {
+  ClipboardText: <ReportsWidget />,
+  Scan: <ChronicRiskWidget />,
+  Trophy: <ChallengeWidget />,
+  Stethoscope: <MedicalCareWidget />,
 };
 
 export function AdvancedServices() {
@@ -26,15 +41,16 @@ export function AdvancedServices() {
           </p>
         </div>
 
-        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {advancedServices.map((item) => {
-            const image = imageByIcon[item.icon];
-            return image ? (
-              <PhotoFeatureCard key={item.title} item={item} image={{ src: image, alt: item.title }} />
-            ) : (
-              <FeatureCard key={item.title} item={item} />
-            );
-          })}
+        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2">
+          {advancedServices.map((item) => (
+            <ServiceShowcaseCard
+              key={item.title}
+              item={item}
+              iconClassName={iconClassByIcon[item.icon]!}
+            >
+              {widgetByIcon[item.icon]}
+            </ServiceShowcaseCard>
+          ))}
         </Reveal>
       </div>
     </section>
