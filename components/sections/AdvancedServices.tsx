@@ -1,6 +1,28 @@
 import { advancedServices } from "@/lib/content/services";
-import { FeatureCard } from "@/components/viz/FeatureCard";
+import { ServiceShowcaseCard } from "@/components/viz/ServiceShowcaseCard";
+import {
+  ChallengeWidget,
+  ChronicRiskWidget,
+  MedicalCareWidget,
+  ReportsWidget,
+} from "@/components/viz/ServiceWidgets";
 import { Reveal } from "@/components/Reveal";
+import type { IconName } from "@/lib/content/types";
+import type { ReactNode } from "react";
+
+const iconClassByIcon: Partial<Record<IconName, string>> = {
+  ClipboardText: "bg-orange-600",
+  Scan: "bg-brand-risk",
+  Trophy: "bg-amber-500",
+  Stethoscope: "bg-cyan-700",
+};
+
+const widgetByIcon: Partial<Record<IconName, ReactNode>> = {
+  ClipboardText: <ReportsWidget />,
+  Scan: <ChronicRiskWidget />,
+  Trophy: <ChallengeWidget />,
+  Stethoscope: <MedicalCareWidget />,
+};
 
 export function AdvancedServices() {
   return (
@@ -19,9 +41,15 @@ export function AdvancedServices() {
           </p>
         </div>
 
-        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2">
           {advancedServices.map((item) => (
-            <FeatureCard key={item.title} item={item} />
+            <ServiceShowcaseCard
+              key={item.title}
+              item={item}
+              iconClassName={iconClassByIcon[item.icon]!}
+            >
+              {widgetByIcon[item.icon]}
+            </ServiceShowcaseCard>
           ))}
         </Reveal>
       </div>

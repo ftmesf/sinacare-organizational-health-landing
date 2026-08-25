@@ -82,7 +82,7 @@ export const advancedServices: FeatureCard[] = [
   },
   {
     icon: "Stethoscope",
-    title: "پایش آنلاین پزشک",
+    title: "مراقبت تخصصی پزشکی",
     description:
       "پایش منظم داده‌های سلامت با امکان پرسش مستقیم از پزشک، دریافت بازخورد تخصصی و مشاهده روند پیشرفت در داشبورد شخصی.",
   },
@@ -111,11 +111,17 @@ export const physicalKit: FeatureCard[] = [
   },
 ];
 
-export const trustedByPlaceholders = [
-  "شرکت شما",
-  "گروه صنعتی",
-  "هلدینگ تولیدی",
-  "مجموعه خدماتی",
-  "کارخانه شما",
-  "سازمان پیشرو",
+export const trustedByPartners = [
+  { name: "بانک صنعت و معدن", logo: "/images/partners/bank-sanat-o-madan.png" },
+  { name: "شرکت صنایع پتروشیمی خلیج فارس (PGPIC/MECO)", logo: "/images/partners/pgpic-meco.png" },
+  { name: "ذیون؛ طب هوشمند (Zhione)", logo: "/images/partners/zhione-smart-medicine.png" },
+  { name: "شرکت صنایع معدنی فولاد سنگان (SMIC)", logo: "/images/partners/smic-foolad-sangan.png" },
+  { name: "شرکت توسعه آهن و فولاد گل‌گهر", logo: "/images/partners/tosee-ahan-foolad-golgohar.png" },
+  { name: "شرکت پتروشیمی پردیس", logo: "/images/partners/pardis-petrochemical.png" },
+  { name: "موسسه خیریه کهریزک", logo: "/images/partners/kahrizak-charity.png" },
+  { name: "خوارزمی گسترش فناوری", logo: "/images/partners/kharazmi-gostaresh-fanavari.png" },
+  { name: "درمان‌یاب", logo: "/images/partners/darmanyab.png" },
+  { name: "دانشگاه علوم پزشکی شهید بهشتی", logo: "/images/partners/sbmu-medical-sciences.png" },
+  { name: "دانشگاه علوم پزشکی تهران", logo: "/images/partners/tums-medical-sciences.png" },
+  { name: "شرکت توزیع نیروی برق تهران بزرگ", logo: "/images/partners/tehran-regional-electric.png" },
 ];

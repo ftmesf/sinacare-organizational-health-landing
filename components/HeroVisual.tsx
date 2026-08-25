@@ -1,77 +1,153 @@
 import {
+  CheckCircle,
+  UsersThree,
+  IdentificationBadge,
+  TestTube,
   ChartLineUp,
-  ShieldCheck,
-  Pulse,
-  HeartStraight,
 } from "@phosphor-icons/react/dist/ssr";
+import { Badge } from "@/components/ui/badge";
 
-const bars = [38, 62, 48, 80, 58, 70, 90];
+const chartPoints = [
+  { month: "فروردین", value: 82, x: 0, y: 90 },
+  { month: "اردیبهشت", value: 84.5, x: 60, y: 77.5 },
+  { month: "خرداد", value: 83, x: 120, y: 85 },
+  { month: "تیر", value: 89, x: 180, y: 55 },
+  { month: "مرداد", value: 90, x: 240, y: 50 },
+  { month: "شهریور", value: 96, x: 300, y: 20 },
+];
+
+const linePath = `M${chartPoints.map((p) => `${p.x},${p.y}`).join(" L")}`;
+const areaPath = `${linePath} L300,100 L0,100 Z`;
 
 export function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-md sm:max-w-lg">
-      <svg
-        viewBox="0 0 200 200"
-        className="absolute inset-0 -z-10 h-full w-full scale-125 opacity-70"
-        aria-hidden
-      >
-        <defs>
-          <linearGradient id="heroBlob" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--brand-primary)" />
-            <stop offset="55%" stopColor="var(--brand-secondary)" />
-            <stop offset="100%" stopColor="var(--brand-accent)" />
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#heroBlob)"
-          opacity="0.18"
-          d="M45.6,-58.2C58.9,-49.6,69.2,-34.9,73.1,-18.4C77,-1.9,74.5,16.4,66.1,31.3C57.7,46.2,43.4,57.7,27.1,64.6C10.8,71.5,-7.5,73.8,-24.5,69.1C-41.5,64.4,-57.2,52.7,-65.9,37.2C-74.6,21.7,-76.3,2.4,-72.1,-15.1C-67.9,-32.6,-57.8,-48.3,-43.9,-57C-30,-65.7,-15,-67.4,1.2,-69C17.4,-70.6,32.3,-66.8,45.6,-58.2Z"
-          transform="translate(100 100)"
-        />
-      </svg>
-
-      <div className="glass-panel absolute inset-x-6 top-6 rounded-2xl p-5 shadow-lg shadow-brand-primary/10 sm:inset-x-10">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs font-medium text-muted-foreground">پرونده سلامت کارمند</p>
-            <p className="mt-0.5 text-sm font-bold text-brand-fg">وضعیت: پایدار</p>
-          </div>
-          <span className="flex size-9 items-center justify-center rounded-full bg-brand-accent/15 text-brand-accent">
-            <HeartStraight size={20} weight="duotone" />
-          </span>
-        </div>
-        <div className="mt-4 flex h-16 items-end justify-between">
-          {bars.map((h, i) => (
-            <span
-              key={i}
-              style={{ height: `${h}%` }}
-              className="w-2.5 rounded-t-full bg-gradient-to-t from-brand-primary to-brand-secondary sm:w-3"
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="glass-panel absolute -top-2 left-2 flex items-center gap-2 rounded-xl px-3 py-2 shadow-md shadow-brand-primary/10 sm:left-0">
-        <span className="flex size-8 items-center justify-center rounded-lg bg-brand-primary text-white">
-          <ChartLineUp size={16} weight="bold" />
-        </span>
-        <span className="text-xs font-semibold text-brand-fg">هوش تجاری BI</span>
-      </div>
-
-      <div className="glass-panel absolute bottom-10 right-0 flex items-center gap-2 rounded-xl px-3 py-2 shadow-md shadow-brand-primary/10 sm:-right-2">
-        <span className="flex size-8 items-center justify-center rounded-lg bg-brand-accent text-white">
-          <ShieldCheck size={16} weight="bold" />
-        </span>
-        <span className="text-xs font-semibold text-brand-fg">داده‌های رمزنگاری‌شده</span>
-      </div>
-
-      <div className="glass-panel absolute bottom-0 left-4 flex items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:left-8">
-        <span className="flex size-8 items-center justify-center rounded-lg bg-brand-secondary/25 text-brand-primary">
-          <Pulse size={16} weight="bold" />
+    <div className="relative mx-auto w-full max-w-lg">
+      <div className="glass-panel absolute -top-4 -right-3 z-10 hidden items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:-right-6 md:flex">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white">
+          <CheckCircle size={16} weight="bold" />
         </span>
         <div>
-          <p className="text-[11px] leading-tight text-muted-foreground">پارامتر آزمایشگاهی</p>
-          <p className="text-xs font-bold leading-tight text-brand-fg">۲۰۰+ پشتیبانی</p>
+          <p className="text-[11px] leading-tight text-muted-foreground">پردازش آنی OCR</p>
+          <p className="text-xs font-bold leading-tight text-brand-fg">۹۹.۸٪ دقت استخراج داده</p>
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-2xl border border-brand-border/60 bg-white shadow-xl shadow-brand-primary/10">
+        <div className="flex items-center justify-between border-b border-brand-border/60 bg-brand-bg-alt/50 px-4 py-2.5">
+          <div className="flex items-center gap-2">
+            <span className="flex items-center gap-1.5">
+              <span className="size-2.5 rounded-full bg-red-400" />
+              <span className="size-2.5 rounded-full bg-amber-400" />
+              <span className="size-2.5 rounded-full bg-emerald-400" />
+            </span>
+            <span dir="ltr" className="text-[11px] text-muted-foreground">
+              sinacare-health-panel.ir/enterprise
+            </span>
+          </div>
+          <Badge className="border-0 bg-emerald-100 text-[11px] text-emerald-700">
+            وضعیت سیستم: فعال
+          </Badge>
+        </div>
+
+        <div className="p-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-bold text-brand-fg">پرونده سلامت کارمند</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                مجموعه پرسنل واحد تولید (۱۴۲ نفر)
+              </p>
+            </div>
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+              <IdentificationBadge size={20} weight="duotone" />
+            </span>
+          </div>
+
+          <div className="mt-4 rounded-xl bg-brand-bg-alt/60 p-4">
+            <div className="flex items-center justify-between">
+              <Badge className="border-0 bg-white text-[11px] text-brand-primary shadow-sm">
+                تحلیل هوشمند ماهانه
+              </Badge>
+              <span className="text-xs font-bold text-brand-fg">
+                روند شاخص‌های سلامت شغلی (BI)
+              </span>
+            </div>
+
+            <div className="mt-3 flex gap-2">
+              <div className="flex h-24 flex-col justify-between py-1 text-[10px] text-muted-foreground">
+                <span>۹۶</span>
+                <span>۸۹</span>
+                <span>۸۲</span>
+              </div>
+              <svg viewBox="0 0 300 100" preserveAspectRatio="none" className="h-24 flex-1">
+                <defs>
+                  <linearGradient id="heroChartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="var(--brand-secondary)" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="var(--brand-secondary)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <path d={areaPath} fill="url(#heroChartFill)" />
+                <path
+                  d={linePath}
+                  fill="none"
+                  stroke="var(--brand-secondary)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                {chartPoints.map((p) => (
+                  <circle
+                    key={p.month}
+                    cx={p.x}
+                    cy={p.y}
+                    r={p.month === "شهریور" ? 5 : 3}
+                    fill="white"
+                    stroke="var(--brand-secondary)"
+                    strokeWidth="2.5"
+                  />
+                ))}
+              </svg>
+            </div>
+            <div className="mt-1 flex justify-between ps-7 text-[10px] text-muted-foreground">
+              {chartPoints.map((p) => (
+                <span key={p.month}>{p.month}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="flex items-center gap-2 rounded-xl bg-brand-bg-alt/60 p-3">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-primary text-white">
+                <ChartLineUp size={16} weight="bold" />
+              </span>
+              <div>
+                <p className="text-[11px] font-bold leading-tight text-brand-fg">هوش تجاری BI</p>
+                <p className="text-[10px] leading-tight text-muted-foreground">
+                  تحلیل دقیق ریسک شغلی
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 rounded-xl bg-brand-bg-alt/60 p-3">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white">
+                <TestTube size={16} weight="bold" />
+              </span>
+              <div>
+                <p className="text-[11px] font-bold leading-tight text-brand-fg">
+                  پارامتر آزمایشگاهی OCR
+                </p>
+                <p className="text-[10px] leading-tight text-muted-foreground">۲۰۰+ پشتیبانی</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="glass-panel absolute -bottom-4 -left-3 hidden items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:-left-6 md:flex">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
+          <UsersThree size={16} weight="bold" />
+        </span>
+        <div>
+          <p className="text-[11px] leading-tight text-muted-foreground">پایش اداری پرسنل</p>
+          <p className="text-xs font-bold leading-tight text-brand-fg">۱۴۲ کارمند تحت پوشش</p>
         </div>
       </div>
     </div>
