@@ -82,7 +82,7 @@ export const advancedServices: FeatureCard[] = [
   },
   {
     icon: "Stethoscope",
-    title: "پایش آنلاین پزشک",
+    title: "مراقبت تخصصی پزشکی",
     description:
       "پایش منظم داده‌های سلامت با امکان پرسش مستقیم از پزشک، دریافت بازخورد تخصصی و مشاهده روند پیشرفت در داشبورد شخصی.",
   },

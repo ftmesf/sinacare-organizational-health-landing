@@ -1,6 +1,13 @@
 import { advancedServices } from "@/lib/content/services";
 import { FeatureCard } from "@/components/viz/FeatureCard";
+import { PhotoFeatureCard } from "@/components/viz/PhotoFeatureCard";
 import { Reveal } from "@/components/Reveal";
+import type { IconName } from "@/lib/content/types";
+
+const imageByIcon: Partial<Record<IconName, string>> = {
+  Scan: "/images/service-chronic-risk.jpg",
+  Stethoscope: "/images/service-medical-care.jpg",
+};
 
 export function AdvancedServices() {
   return (
@@ -20,9 +27,14 @@ export function AdvancedServices() {
         </div>
 
         <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {advancedServices.map((item) => (
-            <FeatureCard key={item.title} item={item} />
-          ))}
+          {advancedServices.map((item) => {
+            const image = imageByIcon[item.icon];
+            return image ? (
+              <PhotoFeatureCard key={item.title} item={item} image={{ src: image, alt: item.title }} />
+            ) : (
+              <FeatureCard key={item.title} item={item} />
+            );
+          })}
         </Reveal>
       </div>
     </section>

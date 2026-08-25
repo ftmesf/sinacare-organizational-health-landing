@@ -47,7 +47,7 @@ export function PricingTable() {
               <h3 className="text-lg font-extrabold text-brand-fg">طرح {tier.name}</h3>
               <p className="mt-2 flex-1 text-sm leading-6 text-muted-foreground">{tier.tagline}</p>
               <Button asChild className="mt-6" variant={tier.highlighted ? "default" : "outline"}>
-                <a href="#contact">تماس برای قیمت‌گذاری</a>
+                <a href="#contact">درخواست دمو</a>
               </Button>
             </div>
           ))}
