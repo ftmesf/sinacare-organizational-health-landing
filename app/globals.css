@@ -197,4 +197,50 @@
       transform: none;
     }
   }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.55;
+    }
+    70%,
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes icon-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  .animate-icon-float {
+    animation: icon-float 3.2s ease-in-out infinite;
+  }
+
+  @keyframes flow-line {
+    to {
+      background-position: 200% 50%;
+    }
+  }
+  .animate-flow-line {
+    background-size: 200% 100%;
+    animation: flow-line 3s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-ring,
+    .animate-icon-float,
+    .animate-flow-line {
+      animation: none;
+    }
+  }
 }
