@@ -26,7 +26,7 @@ const widgetByIcon: Partial<Record<IconName, ReactNode>> = {
 
 export function CoreServices() {
   return (
-    <section id="services" className="section-alt py-16 sm:py-24">
+    <section id="services" className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-bold uppercase tracking-wide text-brand-primary">

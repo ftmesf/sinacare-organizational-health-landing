@@ -33,6 +33,14 @@ export interface FeatureCard {
   description: string;
 }
 
+export interface PainPoint {
+  icon: IconName;
+  badge: string;
+  tone: BenefitTone;
+  title: string;
+  bullets: string[];
+}
+
 export type BenefitTone =
   | "violet"
   | "cyan"

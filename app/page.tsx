@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { WhatIsOccupationalHealth } from "@/components/sections/WhatIsOccupationalHealth";
 import { PainPoints } from "@/components/sections/PainPoints";
+import { ServiceCategories } from "@/components/sections/ServiceCategories";
 import { CoreServices } from "@/components/sections/CoreServices";
 import { Benefits } from "@/components/sections/Benefits";
 import { SelfCareApp } from "@/components/sections/SelfCareApp";
@@ -18,10 +19,11 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <WhatIsOccupationalHealth />
         <PainPoints />
-        <CoreServices />
+        <WhatIsOccupationalHealth />
         <Benefits />
+        <ServiceCategories />
+        <CoreServices />
         <SelfCareApp />
         <AdvancedServices />
         <PhysicalKit />

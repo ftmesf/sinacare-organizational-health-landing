@@ -1,5 +1,5 @@
 import { painPoints } from "@/lib/content/services";
-import { FeatureCard } from "@/components/viz/FeatureCard";
+import { PainPointCard } from "@/components/viz/PainPointCard";
 import { Reveal } from "@/components/Reveal";
 
 export function PainPoints() {
@@ -18,7 +18,7 @@ export function PainPoints() {
 
         <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {painPoints.map((item) => (
-            <FeatureCard key={item.title} item={item} tone="risk" />
+            <PainPointCard key={item.title} item={item} />
           ))}
         </Reveal>
       </div>
