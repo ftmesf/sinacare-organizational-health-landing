@@ -1,13 +1,27 @@
 import { coreServices } from "@/lib/content/services";
-import { PhotoFeatureCard } from "@/components/viz/PhotoFeatureCard";
+import { ServiceShowcaseCard } from "@/components/viz/ServiceShowcaseCard";
+import {
+  BiWidget,
+  HealthPanelWidget,
+  OcrWidget,
+  RecordsWidget,
+} from "@/components/viz/ServiceWidgets";
 import { Reveal } from "@/components/Reveal";
 import type { IconName } from "@/lib/content/types";
+import type { ReactNode } from "react";
 
-const imageByIcon: Partial<Record<IconName, string>> = {
-  HeartStraight: "/images/service-health-panel.jpg",
-  ChartLineUp: "/images/service-bi.jpg",
-  FileText: "/images/service-ocr.jpg",
-  Database: "/images/service-records.jpg",
+const iconClassByIcon: Partial<Record<IconName, string>> = {
+  HeartStraight: "bg-[#0b3a57]",
+  ChartLineUp: "bg-blue-600",
+  FileText: "bg-emerald-500",
+  Database: "bg-violet-600",
+};
+
+const widgetByIcon: Partial<Record<IconName, ReactNode>> = {
+  HeartStraight: <HealthPanelWidget />,
+  ChartLineUp: <BiWidget />,
+  FileText: <OcrWidget />,
+  Database: <RecordsWidget />,
 };
 
 export function CoreServices() {
@@ -27,13 +41,15 @@ export function CoreServices() {
           </p>
         </div>
 
-        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2">
           {coreServices.map((item) => (
-            <PhotoFeatureCard
+            <ServiceShowcaseCard
               key={item.title}
               item={item}
-              image={{ src: imageByIcon[item.icon]!, alt: item.title }}
-            />
+              iconClassName={iconClassByIcon[item.icon]!}
+            >
+              {widgetByIcon[item.icon]}
+            </ServiceShowcaseCard>
           ))}
         </Reveal>
       </div>
