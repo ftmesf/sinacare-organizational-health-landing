@@ -15,7 +15,7 @@ export function ServiceShowcaseCard({
   return (
     <Card
       data-reveal
-      className="rounded-2xl border border-brand-border/70 p-2 ring-0 shadow-none transition hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-primary/10"
+      className="rounded-2xl border border-brand-border/70 ring-0 shadow-none transition [--card-spacing:--spacing(6)] hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-primary/10"
     >
       <CardContent className="flex flex-col gap-4">
         <div className="flex items-center justify-between gap-4">
