@@ -41,6 +41,10 @@ export interface PainPoint {
   bullets: string[];
 }
 
+export interface ServiceCategoryItem extends FeatureCard {
+  tone: BenefitTone;
+}
+
 export type BenefitTone =
   | "violet"
   | "cyan"

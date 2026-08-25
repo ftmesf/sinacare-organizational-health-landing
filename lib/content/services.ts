@@ -1,10 +1,10 @@
-import type { FeatureCard, PainPoint } from "./types";
+import type { FeatureCard, PainPoint, ServiceCategoryItem } from "./types";
 
 export const painPoints: PainPoint[] = [
   {
     icon: "FileText",
     badge: "اتلاف زمان",
-    tone: "amber",
+    tone: "cyan",
     title: "پرونده‌های کاغذی و پراکنده",
     bullets: [
       "سوابق معاینات ادواری در پوشه‌های فیزیکی و اکسل‌های جدا از هم نگهداری می‌شود.",
@@ -24,7 +24,7 @@ export const painPoints: PainPoint[] = [
   {
     icon: "Clock",
     badge: "هزینه درمان",
-    tone: "orange",
+    tone: "amber",
     title: "تشخیص دیرهنگام بیماری",
     bullets: [
       "بدون پایش مستمر داده‌های سلامت، روند بیماری‌های مزمن شغلی تا بروز علائم دیده نمی‌شود.",
@@ -43,27 +43,31 @@ export const painPoints: PainPoint[] = [
   },
 ];
 
-export const serviceCategories: FeatureCard[] = [
+export const serviceCategories: ServiceCategoryItem[] = [
   {
     icon: "Database",
+    tone: "indigo",
     title: "خدمات پایه",
     description:
       "زیرساخت نرم‌افزاری طب کار سازمان: پرونده دیجیتال سلامت، هوش تجاری، ثبت خودکار داده‌های آزمایشگاهی و تجمیع سوابق.",
   },
   {
     icon: "DeviceMobile",
+    tone: "teal",
     title: "خدمات فردی (اپلیکیشن)",
     description:
       "اپلیکیشن خودمراقبتی رایگان برای هر کارمند؛ ثبت، پیگیری و تحلیل شخصی داده‌های سلامت.",
   },
   {
     icon: "Stethoscope",
+    tone: "orange",
     title: "خدمات تخصصی",
     description:
       "گزارش‌های سازمانی، ریسک‌سنجی بیماری‌های مزمن، چالش اصلاح سبک زندگی و مراقبت تخصصی پزشکی.",
   },
   {
     icon: "MonitorPlay",
+    tone: "emerald",
     title: "تجهیزات فیزیکی",
     description:
       "ایستگاه سلامت، دستگاه تست قند خون، فشارسنج دیجیتال و آنالیز ترکیب بدن در محل سازمان.",
