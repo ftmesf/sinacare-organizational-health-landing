@@ -1,10 +1,4 @@
-import {
-  CheckCircle,
-  UsersThree,
-  IdentificationBadge,
-  TestTube,
-  ChartLineUp,
-} from "@phosphor-icons/react/dist/ssr";
+import { IdentificationBadge, TestTube, ChartLineUp } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 
 const chartPoints = [
@@ -26,16 +20,6 @@ export function HeroVisual() {
         aria-hidden
         className="brand-gradient-bg pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-30 blur-3xl"
       />
-
-      <div className="glass-panel absolute -top-4 -right-3 z-10 hidden items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:-right-6 md:flex">
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-secondary text-white">
-          <CheckCircle size={16} weight="bold" />
-        </span>
-        <div>
-          <p className="text-[11px] leading-tight text-muted-foreground">پردازش آنی OCR</p>
-          <p className="text-xs font-bold leading-tight text-brand-fg">۹۹.۸٪ دقت استخراج داده</p>
-        </div>
-      </div>
 
       <div className="overflow-hidden rounded-2xl border border-brand-border bg-white shadow-2xl shadow-brand-primary/15">
         <div className="flex items-center justify-between border-b border-brand-border/60 bg-brand-bg-alt/50 px-4 py-2.5">
@@ -153,16 +137,6 @@ export function HeroVisual() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="glass-panel absolute -bottom-4 -left-3 hidden items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:-left-6 md:flex">
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
-          <UsersThree size={16} weight="bold" />
-        </span>
-        <div>
-          <p className="text-[11px] leading-tight text-muted-foreground">پایش اداری پرسنل</p>
-          <p className="text-xs font-bold leading-tight text-brand-fg">۱۴۲ کارمند تحت پوشش</p>
         </div>
       </div>
     </div>

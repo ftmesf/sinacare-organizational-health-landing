@@ -19,7 +19,7 @@ export function Hero() {
           </Badge>
 
           <h1 className="mt-5 text-3xl font-extrabold leading-tight text-brand-fg sm:text-4xl lg:text-5xl">
-            سیناکر، نرم‌افزار جامع طب کار و مدیریت سلامت سازمانی
+            سیناکر؛ پرونده طب‌کار سازمان شما را از کاغذ به داده تبدیل می‌کند
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
