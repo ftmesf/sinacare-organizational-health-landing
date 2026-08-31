@@ -11,10 +11,10 @@ import type { IconName } from "@/lib/content/types";
 import type { ReactNode } from "react";
 
 const iconClassByIcon: Partial<Record<IconName, string>> = {
-  HeartStraight: "bg-[#0b3a57]",
-  ChartLineUp: "bg-blue-600",
-  FileText: "bg-emerald-500",
-  Database: "bg-violet-600",
+  HeartStraight: "bg-brand-fg",
+  ChartLineUp: "bg-brand-primary",
+  FileText: "bg-brand-accent",
+  Database: "bg-brand-secondary",
 };
 
 const widgetByIcon: Partial<Record<IconName, ReactNode>> = {

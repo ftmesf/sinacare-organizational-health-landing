@@ -22,8 +22,13 @@ const areaPath = `${linePath} L300,100 L0,100 Z`;
 export function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-lg">
+      <div
+        aria-hidden
+        className="brand-gradient-bg pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-30 blur-3xl"
+      />
+
       <div className="glass-panel absolute -top-4 -right-3 z-10 hidden items-center gap-2 rounded-xl px-3 py-2.5 shadow-md shadow-brand-primary/10 sm:-right-6 md:flex">
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-secondary text-white">
           <CheckCircle size={16} weight="bold" />
         </span>
         <div>
@@ -32,7 +37,7 @@ export function HeroVisual() {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-brand-border/60 bg-white shadow-xl shadow-brand-primary/10">
+      <div className="overflow-hidden rounded-2xl border border-brand-border bg-white shadow-2xl shadow-brand-primary/15">
         <div className="flex items-center justify-between border-b border-brand-border/60 bg-brand-bg-alt/50 px-4 py-2.5">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1.5">
@@ -44,7 +49,7 @@ export function HeroVisual() {
               sinacare-health-panel.ir/enterprise
             </span>
           </div>
-          <Badge className="border-0 bg-emerald-100 text-[11px] text-emerald-700">
+          <Badge className="border-0 bg-brand-accent/10 text-[11px] text-brand-accent">
             وضعیت سیستم: فعال
           </Badge>
         </div>
@@ -84,15 +89,25 @@ export function HeroVisual() {
                     <stop offset="0%" stopColor="var(--brand-secondary)" stopOpacity="0.35" />
                     <stop offset="100%" stopColor="var(--brand-secondary)" stopOpacity="0" />
                   </linearGradient>
+                  <filter id="heroChartGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow
+                      dx="0"
+                      dy="1"
+                      stdDeviation="2.5"
+                      floodColor="var(--brand-secondary)"
+                      floodOpacity="0.4"
+                    />
+                  </filter>
                 </defs>
                 <path d={areaPath} fill="url(#heroChartFill)" />
                 <path
                   d={linePath}
                   fill="none"
                   stroke="var(--brand-secondary)"
-                  strokeWidth="3"
+                  strokeWidth="3.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  filter="url(#heroChartGlow)"
                 />
                 {chartPoints.map((p) => (
                   <circle
@@ -127,7 +142,7 @@ export function HeroVisual() {
               </div>
             </div>
             <div className="flex items-center gap-2 rounded-xl bg-brand-bg-alt/60 p-3">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
                 <TestTube size={16} weight="bold" />
               </span>
               <div>

@@ -3,14 +3,14 @@ import { toneClasses } from "@/components/viz/tone";
 import type { ServiceCategoryItem } from "@/lib/content/types";
 
 const ringTone: Record<string, string> = {
-  violet: "bg-violet-400",
-  cyan: "bg-cyan-400",
-  emerald: "bg-emerald-400",
-  amber: "bg-amber-400",
-  teal: "bg-teal-400",
-  red: "bg-red-400",
-  indigo: "bg-indigo-400",
-  orange: "bg-orange-400",
+  violet: "bg-brand-primary",
+  cyan: "bg-brand-secondary",
+  emerald: "bg-brand-accent",
+  amber: "bg-brand-primary",
+  teal: "bg-brand-secondary",
+  red: "bg-brand-risk",
+  indigo: "bg-brand-accent",
+  orange: "bg-brand-primary",
 };
 
 export function ServiceCategoryCard({
