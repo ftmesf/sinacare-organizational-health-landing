@@ -6,9 +6,9 @@ const points: (FeatureCardData & { tone: BenefitTone })[] = [
   {
     icon: "Stethoscope",
     tone: "cyan",
-    title: "طب کار، نه فرهنگ‌سازمانی",
+    title: "نظارت تخصصی بر سلامت شغلی",
     description:
-      "«سلامت سازمانی» در سیناکر به معنای طب کار دیجیتال است: نظارت بر سلامت شغلی، معاینات ادواری و تشخیص زودهنگام بیماری‌های ناشی از کار. این مفهوم را نباید با مباحث مدیریتیِ فرهنگ سازمانی یا رهبری اشتباه گرفت.",
+      "معاینات ادواری، غربالگری‌های تخصصی و تشخیص زودهنگام بیماری‌های ناشی از کار — با پیگیری منظم و مستند برای هر پرسنل.",
   },
   {
     icon: "Scales",
@@ -32,12 +32,13 @@ export function WhatIsOccupationalHealth() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            سلامت سازمانی از نگاه سیناکر یعنی چه؟
+            سلامت سازمانی در سیناکر، یعنی طب‌کار دیجیتال
           </h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">
-            پیش از هر چیز، تعریف را روشن می‌کنیم: آنچه اینجا «سلامت سازمانی»
-            نامیده می‌شود، حوزه تخصصی <strong className="text-brand-fg">طب کار</strong>{" "}
-            است، نه یک برنامه فرهنگ‌سازی یا رضایت‌سنجی داخلی.
+            نظارت تخصصی و مستند بر سلامت شغلی کارکنان: معاینات ادواری،
+            تشخیص زودهنگام بیماری‌های ناشی از کار و پرونده‌ای قابل‌استناد —{" "}
+            <strong className="text-brand-fg">نه</strong> یک برنامه
+            فرهنگ‌سازمانی یا رضایت‌سنجی داخلی.
           </p>
         </div>
 
