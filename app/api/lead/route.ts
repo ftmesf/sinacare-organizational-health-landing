@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "بدنه درخواست نامعتبر است." }, { status: 400 });
   }
 
-  const { fullName, organization, phone, headcount, message } = (body ?? {}) as Record<string, unknown>;
+  const { fullName, organization, phone, jobTitle, message } = (body ?? {}) as Record<string, unknown>;
 
   if (
     typeof fullName !== "string" ||
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     full_name: fullName.trim(),
     organization: organization.trim(),
     phone: phone.trim(),
-    headcount: typeof headcount === "string" ? headcount.trim() || null : null,
+    job_title: typeof jobTitle === "string" ? jobTitle.trim() || null : null,
     message: typeof message === "string" ? message.trim() || null : null,
     source: "landing_page",
   });

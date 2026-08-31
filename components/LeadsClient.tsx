@@ -7,8 +7,8 @@ type Lead = {
   created_at: string;
   full_name: string;
   organization: string;
+  job_title: string | null;
   phone: string;
-  headcount: string | null;
   message: string | null;
 };
 
@@ -99,8 +99,8 @@ export function LeadsClient() {
                 <th className="px-4 py-3 text-start font-bold text-brand-fg">تاریخ</th>
                 <th className="px-4 py-3 text-start font-bold text-brand-fg">نام</th>
                 <th className="px-4 py-3 text-start font-bold text-brand-fg">سازمان</th>
+                <th className="px-4 py-3 text-start font-bold text-brand-fg">عنوان شغلی</th>
                 <th className="px-4 py-3 text-start font-bold text-brand-fg">تلفن</th>
-                <th className="px-4 py-3 text-start font-bold text-brand-fg">تعداد پرسنل</th>
                 <th className="px-4 py-3 text-start font-bold text-brand-fg">توضیح</th>
               </tr>
             </thead>
@@ -112,10 +112,10 @@ export function LeadsClient() {
                   </td>
                   <td className="px-4 py-3">{lead.full_name}</td>
                   <td className="px-4 py-3">{lead.organization}</td>
+                  <td className="px-4 py-3">{lead.job_title ?? "—"}</td>
                   <td dir="ltr" className="px-4 py-3 text-end">
                     {lead.phone}
                   </td>
-                  <td className="px-4 py-3">{lead.headcount ?? "—"}</td>
                   <td className="px-4 py-3">{lead.message ?? "—"}</td>
                 </tr>
               ))}

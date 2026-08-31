@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   const supabase = getSupabaseAdminClient();
   const { data, error } = await supabase
     .from("leads")
-    .select("id, created_at, full_name, organization, phone, headcount, message")
+    .select("id, created_at, full_name, organization, job_title, phone, message")
     .order("created_at", { ascending: false });
 
   if (error) {
