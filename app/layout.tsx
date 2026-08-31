@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import { AgentationToolbar } from "@/components/agentation-toolbar";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-sans",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
+        <AgentationToolbar />
       </body>
     </html>
   );

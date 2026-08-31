@@ -1,63 +1,46 @@
 import type { BenefitTone } from "@/lib/content/types";
 
-export const toneClasses: Record<
-  BenefitTone,
-  { icon: string; badge: string; footer: string; hover: string; bullet: string }
-> = {
-  violet: {
-    icon: "bg-violet-100 text-violet-600",
-    badge: "bg-violet-100 text-violet-700",
-    footer: "text-violet-600",
-    hover: "hover:border-violet-400 hover:shadow-violet-500/10",
-    bullet: "bg-violet-500",
-  },
-  cyan: {
-    icon: "bg-cyan-100 text-cyan-600",
-    badge: "bg-cyan-100 text-cyan-700",
-    footer: "text-cyan-600",
-    hover: "hover:border-cyan-400 hover:shadow-cyan-500/10",
-    bullet: "bg-cyan-500",
-  },
-  emerald: {
-    icon: "bg-emerald-100 text-emerald-600",
-    badge: "bg-emerald-100 text-emerald-700",
-    footer: "text-emerald-600",
-    hover: "hover:border-emerald-400 hover:shadow-emerald-500/10",
-    bullet: "bg-emerald-500",
-  },
-  amber: {
-    icon: "bg-amber-100 text-amber-600",
-    badge: "bg-amber-100 text-amber-700",
-    footer: "text-amber-600",
-    hover: "hover:border-amber-400 hover:shadow-amber-500/10",
-    bullet: "bg-amber-500",
-  },
-  teal: {
-    icon: "bg-teal-100 text-teal-600",
-    badge: "bg-teal-100 text-teal-700",
-    footer: "text-teal-600",
-    hover: "hover:border-teal-400 hover:shadow-teal-500/10",
-    bullet: "bg-teal-500",
-  },
-  red: {
-    icon: "bg-red-100 text-red-600",
-    badge: "bg-red-100 text-red-700",
-    footer: "text-red-600",
-    hover: "hover:border-red-400 hover:shadow-red-500/10",
-    bullet: "bg-red-500",
-  },
-  indigo: {
-    icon: "bg-indigo-100 text-indigo-600",
-    badge: "bg-indigo-100 text-indigo-700",
-    footer: "text-indigo-600",
-    hover: "hover:border-indigo-400 hover:shadow-indigo-500/10",
-    bullet: "bg-indigo-500",
-  },
-  orange: {
-    icon: "bg-orange-100 text-orange-600",
-    badge: "bg-orange-100 text-orange-700",
-    footer: "text-orange-600",
-    hover: "hover:border-orange-400 hover:shadow-orange-500/10",
-    bullet: "bg-orange-500",
-  },
+type ToneClass = { icon: string; badge: string; footer: string; hover: string; bullet: string };
+
+const brandPrimary: ToneClass = {
+  icon: "bg-brand-primary/10 text-brand-primary",
+  badge: "bg-brand-primary/10 text-brand-primary",
+  footer: "text-brand-primary",
+  hover: "hover:border-brand-primary/40 hover:shadow-brand-primary/10",
+  bullet: "bg-brand-primary",
+};
+
+const brandSecondary: ToneClass = {
+  icon: "bg-brand-secondary/10 text-brand-secondary",
+  badge: "bg-brand-secondary/10 text-brand-secondary",
+  footer: "text-brand-secondary",
+  hover: "hover:border-brand-secondary/40 hover:shadow-brand-secondary/10",
+  bullet: "bg-brand-secondary",
+};
+
+const brandAccent: ToneClass = {
+  icon: "bg-brand-accent/10 text-brand-accent",
+  badge: "bg-brand-accent/10 text-brand-accent",
+  footer: "text-brand-accent",
+  hover: "hover:border-brand-accent/40 hover:shadow-brand-accent/10",
+  bullet: "bg-brand-accent",
+};
+
+const brandRisk: ToneClass = {
+  icon: "bg-brand-risk-bg text-brand-risk",
+  badge: "bg-brand-risk-bg text-brand-risk",
+  footer: "text-brand-risk",
+  hover: "hover:border-brand-risk/40 hover:shadow-brand-risk/10",
+  bullet: "bg-brand-risk",
+};
+
+export const toneClasses: Record<BenefitTone, ToneClass> = {
+  violet: brandPrimary,
+  cyan: brandSecondary,
+  emerald: brandAccent,
+  amber: brandPrimary,
+  teal: brandSecondary,
+  red: brandRisk,
+  indigo: brandAccent,
+  orange: brandPrimary,
 };

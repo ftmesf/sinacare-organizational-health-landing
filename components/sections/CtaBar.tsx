@@ -6,8 +6,7 @@ export function CtaBar() {
   return (
     <section id="contact" className="py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="glass-panel relative overflow-hidden rounded-3xl bg-brand-primary/95 px-6 py-12 text-center sm:px-12">
-          <div className="brand-gradient-bg absolute inset-0 -z-10" />
+        <div className="brand-gradient-bg relative overflow-hidden rounded-3xl px-6 py-12 text-center shadow-xl shadow-brand-primary/30 sm:px-12">
           <BrandRings className="pointer-events-none absolute -bottom-32 -left-24 -z-10 h-96 w-96 text-white opacity-15" />
           <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
             مدیریت سلامت شغلی سازمان خود را از امروز دیجیتال کنید
