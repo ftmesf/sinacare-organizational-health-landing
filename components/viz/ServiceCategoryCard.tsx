@@ -2,51 +2,28 @@ import { FeatureIcon } from "@/components/viz/FeatureIcon";
 import { toneClasses } from "@/components/viz/tone";
 import type { ServiceCategoryItem } from "@/lib/content/types";
 
-const ringTone: Record<string, string> = {
-  violet: "bg-brand-primary",
-  cyan: "bg-brand-secondary",
-  emerald: "bg-brand-accent",
-  amber: "bg-brand-primary",
-  teal: "bg-brand-secondary",
-  red: "bg-brand-risk",
-  indigo: "bg-brand-accent",
-  orange: "bg-brand-primary",
-};
-
-export function ServiceCategoryCard({
-  item,
-  index,
-}: {
-  item: ServiceCategoryItem;
-  index: number;
-}) {
+export function ServiceCategoryCard({ item }: { item: ServiceCategoryItem }) {
   const tone = toneClasses[item.tone];
-  const ring = ringTone[item.tone];
-  const number = String(index + 1).padStart(2, "0").replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
 
   return (
     <div
       data-reveal
-      className={`group relative flex flex-col items-center overflow-hidden rounded-2xl border border-brand-border/70 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${tone.hover}`}
+      className="group relative z-10 flex flex-1 flex-col items-center gap-3 text-center"
     >
       <span
-        className="pointer-events-none absolute -top-3 left-3 select-none text-6xl font-black text-brand-fg/[0.04] transition-colors duration-300 group-hover:text-brand-fg/[0.07]"
-        aria-hidden
+        className={`flex size-16 shrink-0 items-center justify-center rounded-2xl shadow-lg ring-8 ring-brand-bg-alt transition-transform duration-300 group-hover:scale-110 ${tone.solid}`}
       >
-        {number}
+        <FeatureIcon name={item.icon} size={28} />
       </span>
-
-      <span className="relative mb-1 flex size-16 items-center justify-center">
-        <span className={`absolute inset-0 rounded-2xl ${ring} animate-pulse-ring`} />
-        <span
-          className={`relative flex size-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 ${tone.icon} animate-icon-float`}
-        >
-          <FeatureIcon name={item.icon} size={26} />
-        </span>
-      </span>
-
-      <h3 className="relative mt-3 text-base font-bold text-brand-fg">{item.title}</h3>
-      <p className="relative mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p>
+      <h3 className="text-base font-bold text-brand-fg">{item.title}</h3>
+      <ul className="w-full max-w-56 space-y-1.5 text-start">
+        {item.bullets.map((bullet) => (
+          <li key={bullet} className="flex items-start gap-2 text-sm leading-6 text-brand-fg/70">
+            <span className={`mt-2 size-1.5 shrink-0 rounded-full ${tone.bullet}`} />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

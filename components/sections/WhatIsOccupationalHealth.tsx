@@ -1,35 +1,50 @@
 import { TonedFeatureCard } from "@/components/viz/TonedFeatureCard";
+import { BrandRings } from "@/components/viz/BrandRings";
 import { Reveal } from "@/components/Reveal";
-import type { BenefitTone, FeatureCard as FeatureCardData } from "@/lib/content/types";
+import type { BenefitTone, IconName } from "@/lib/content/types";
 
-const points: (FeatureCardData & { tone: BenefitTone })[] = [
+const points: { icon: IconName; tone: BenefitTone; title: string; bullets: string[] }[] = [
   {
     icon: "Stethoscope",
     tone: "cyan",
     title: "نظارت تخصصی بر سلامت شغلی",
-    description:
-      "معاینات ادواری، غربالگری‌های تخصصی و تشخیص زودهنگام بیماری‌های ناشی از کار — با پیگیری منظم و مستند برای هر پرسنل.",
+    bullets: [
+      "معاینات ادواری شغلی",
+      "غربالگری‌های تخصصی",
+      "تشخیص زودهنگام بیماری‌های ناشی از کار",
+      "پیگیری منظم و مستند برای هر پرسنل",
+    ],
   },
   {
     icon: "Scales",
-    tone: "indigo",
+    tone: "violet",
     title: "ریشه در الزام قانونی",
-    description:
-      "بر اساس قانون کار، انجام معاینات دوره‌ای شغلی و نگهداری سوابق پزشکی پرسنل برای کارفرما الزامی است. سیناکر همین وظیفه قانونی را دیجیتال، قابل‌پیگیری و قابل‌استناد می‌کند.",
+    bullets: [
+      "الزام قانون کار برای کارفرما",
+      "معاینات دوره‌ای شغلی مستند",
+      "نگهداری سوابق پزشکی پرسنل",
+      "دیجیتال، قابل‌پیگیری و قابل‌استناد",
+    ],
   },
   {
     icon: "Database",
     tone: "emerald",
     title: "یک پرونده، سه ذی‌نفع",
-    description:
-      "پرونده دیجیتال سلامت، فرد، پزشک طب کار و مدیر سازمان را به یک منبع داده واحد متصل می‌کند تا تصمیم‌های مدیریتی درباره سلامت نیروی کار، دقیق‌تر و مبتنی بر داده باشد.",
+    bullets: [
+      "فرد (کارمند)",
+      "پزشک طب کار",
+      "مدیر سازمان",
+      "تصمیم‌های مدیریتی دقیق‌تر و مبتنی بر داده",
+    ],
   },
 ];
 
 export function WhatIsOccupationalHealth() {
   return (
-    <section id="what-is" className="section-alt py-16 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="what-is" className="section-alt relative overflow-hidden py-16 sm:py-24">
+      <BrandRings className="pointer-events-none absolute -top-32 -left-40 -z-0 h-[480px] w-[480px] text-brand-primary opacity-[0.07]" />
+      <BrandRings className="pointer-events-none absolute -bottom-40 -right-32 -z-0 h-[420px] w-[420px] text-brand-accent opacity-[0.07]" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold text-brand-fg sm:text-3xl">
             سلامت سازمانی در سیناکر، یعنی طب‌کار دیجیتال

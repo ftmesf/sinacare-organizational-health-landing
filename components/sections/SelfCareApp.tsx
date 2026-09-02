@@ -2,6 +2,7 @@ import { selfCareApp } from "@/lib/content/services";
 import { FeatureIcon } from "@/components/viz/FeatureIcon";
 import { Badge } from "@/components/ui/badge";
 import { PhoneMockup } from "@/components/viz/PhoneMockup";
+import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 
 export function SelfCareApp() {
   return (
@@ -30,6 +31,13 @@ export function SelfCareApp() {
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">
                   {selfCareApp.description}
                 </p>
+                <a
+                  href="#contact"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary transition hover:gap-2.5"
+                >
+                  فعال‌سازی اپلیکیشن برای سازمانم
+                  <ArrowLeft size={16} weight="bold" />
+                </a>
               </div>
             </div>
           </div>

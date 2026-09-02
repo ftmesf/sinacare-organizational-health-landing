@@ -8,17 +8,19 @@ export function BenefitCard({ item }: { item: BenefitStat }) {
   return (
     <div
       data-reveal
-      className={`flex flex-col rounded-2xl border border-brand-border/70 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${tone.hover}`}
+      className={`relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-brand-border/60 bg-gradient-to-br ${tone.wash} to-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${tone.hover}`}
     >
-      <span className={`flex size-11 shrink-0 items-center justify-center rounded-xl ${tone.icon}`}>
-        <FeatureIcon name={item.icon} size={22} />
-      </span>
-      <h3 className="mt-4 text-sm font-bold text-brand-fg">{item.label}</h3>
-      <p className="mt-2 flex-1 text-xs leading-6 text-muted-foreground">{item.description}</p>
-      <div className="mt-4 flex items-center gap-1.5 border-t border-brand-border/60 pt-3">
-        <FeatureIcon name={item.footerIcon} size={14} className={tone.footer} />
-        <span className={`text-[11px] font-bold ${tone.footer}`}>{item.footerLabel}</span>
+      <div className="flex items-center gap-3">
+        <span className={`flex size-10 shrink-0 items-center justify-center rounded-xl shadow-md ${tone.solid}`}>
+          <FeatureIcon name={item.icon} size={19} />
+        </span>
+        <h3 className="text-sm font-bold leading-6 text-brand-fg">{item.label}</h3>
       </div>
+      <p className="flex-1 text-xs leading-6 text-brand-fg/70">{item.description}</p>
+      <span className={`inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold ${tone.badge}`}>
+        <FeatureIcon name={item.footerIcon} size={13} />
+        {item.footerLabel}
+      </span>
     </div>
   );
 }

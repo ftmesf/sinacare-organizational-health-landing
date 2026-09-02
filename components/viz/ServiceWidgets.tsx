@@ -207,28 +207,32 @@ export function ReportsWidget() {
 
 export function ChronicRiskWidget() {
   const rows = [
-    { disease: "بیماری‌های قلبی‌عروقی", horizon: "۱۰ سال آینده", percent: 35, icon: HeartStraight, className: "text-brand-risk", barClassName: "bg-brand-risk" },
-    { disease: "دیابت نوع ۲", horizon: "۸ سال آینده", percent: 58, icon: Drop, className: "text-brand-primary", barClassName: "bg-brand-primary" },
-    { disease: "کبد چرب و فیبروز کبدی", horizon: "۶ سال آینده", percent: 78, icon: Heartbeat, className: "text-brand-primary", barClassName: "bg-brand-primary" },
+    { disease: "قلبی‌عروقی", horizon: "۱۰ سال آینده", percent: 35, icon: HeartStraight },
+    { disease: "دیابت نوع ۲", horizon: "۸ سال آینده", percent: 58, icon: Drop },
+    { disease: "کبد چرب", horizon: "۶ سال آینده", percent: 78, icon: Heartbeat },
   ];
   return (
     <div className={panelClassName}>
-      <span className="text-xs font-bold text-brand-risk">پیش‌بینی ۱۰ ساله</span>
-      <p className="mt-1 text-sm font-bold text-brand-fg">احتمال بروز بیماری‌های مزمن</p>
-      <div className="mt-4 space-y-2">
+      <div className="flex items-center justify-between">
+        <Badge className="border-0 bg-brand-risk-bg text-brand-risk">پیش‌بینی ۱۰ ساله</Badge>
+        <span className="text-sm font-bold text-brand-fg">احتمال بروز بیماری مزمن</span>
+      </div>
+      <div className="mt-4 grid grid-cols-3 gap-2">
         {rows.map((row) => (
-          <div key={row.disease} className="rounded-lg bg-white p-3 text-sm shadow-sm">
-            <div className="flex items-center justify-between gap-2">
-              <span className="flex items-center gap-2 text-brand-fg">
-                <span className={`flex size-7 shrink-0 items-center justify-center rounded-lg bg-brand-bg-alt ${row.className}`}>
-                  <row.icon size={14} weight="bold" />
-                </span>
-                {row.disease}
+          <div key={row.disease} className="flex flex-col items-center gap-2 rounded-lg bg-white p-3 text-center shadow-sm">
+            <div
+              className="flex size-14 items-center justify-center rounded-full p-1"
+              style={{
+                background: `conic-gradient(var(--brand-risk) ${row.percent * 3.6}deg, var(--brand-bg-alt) 0deg)`,
+              }}
+            >
+              <span className="flex size-full items-center justify-center rounded-full bg-white text-brand-risk">
+                <row.icon size={18} weight="duotone" />
               </span>
-              <span className={`font-bold ${row.className}`}>{row.horizon}</span>
             </div>
-            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-brand-bg-alt">
-              <div className={`h-full rounded-full ${row.barClassName}`} style={{ width: `${row.percent}%` }} />
+            <div>
+              <p className="text-[11px] font-bold leading-tight text-brand-fg">{row.disease}</p>
+              <p className="mt-0.5 text-[10px] leading-tight text-muted-foreground">{row.horizon}</p>
             </div>
           </div>
         ))}
