@@ -23,9 +23,13 @@ export function ServiceCategories() {
           </p>
         </div>
 
-        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceCategories.map((item, index) => (
-            <ServiceCategoryCard key={item.title} item={item} index={index} />
+        <Reveal className="relative mt-16 flex flex-col gap-10 sm:flex-row sm:items-start sm:gap-4">
+          <span
+            aria-hidden
+            className="absolute top-8 right-1/2 bottom-8 w-px -translate-x-1/2 bg-gradient-to-b from-brand-primary via-brand-secondary to-brand-accent opacity-25 sm:right-8 sm:bottom-auto sm:left-8 sm:h-px sm:w-auto sm:translate-x-0 sm:bg-gradient-to-l"
+          />
+          {serviceCategories.map((item) => (
+            <ServiceCategoryCard key={item.title} item={item} />
           ))}
         </Reveal>
       </div>

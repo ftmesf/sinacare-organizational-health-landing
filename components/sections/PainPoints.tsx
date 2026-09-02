@@ -16,7 +16,7 @@ export function PainPoints() {
           </p>
         </div>
 
-        <Reveal className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="mt-12 grid gap-5 sm:grid-cols-2">
           {painPoints.map((item) => (
             <PainPointCard key={item.title} item={item} />
           ))}

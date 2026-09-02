@@ -1,4 +1,4 @@
-import { IdentificationBadge, TestTube, ChartLineUp } from "@phosphor-icons/react/dist/ssr";
+import { IdentificationBadge, TestTube, ChartLineUp, CheckCircle, TrendUp } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 
 const chartPoints = [
@@ -20,6 +20,26 @@ export function HeroVisual() {
         aria-hidden
         className="brand-gradient-bg pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-30 blur-3xl"
       />
+
+      <div className="animate-icon-float absolute -top-5 -right-3 z-20 flex items-center gap-2 rounded-2xl border border-brand-border/70 bg-white py-2 pe-3 ps-2.5 shadow-xl shadow-brand-accent/15 sm:-top-6 sm:-right-6">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-accent text-white">
+          <CheckCircle size={17} weight="fill" />
+        </span>
+        <div>
+          <p className="text-[11px] font-bold leading-tight text-brand-fg">ثبت خودکار OCR</p>
+          <p className="text-[10px] leading-tight text-muted-foreground">همین الان</p>
+        </div>
+      </div>
+
+      <div className="animate-icon-float absolute -bottom-5 -left-3 z-20 flex items-center gap-2 rounded-2xl border border-brand-border/70 bg-white py-2 pe-3 ps-2.5 shadow-xl shadow-brand-primary/15 [animation-delay:-1.6s] sm:-bottom-6 sm:-left-6">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-primary text-white">
+          <TrendUp size={17} weight="bold" />
+        </span>
+        <div>
+          <p className="text-[11px] font-bold leading-tight text-brand-fg">۸٪ رشد شاخص سلامت</p>
+          <p className="text-[10px] leading-tight text-muted-foreground">نسبت به ماه قبل</p>
+        </div>
+      </div>
 
       <div className="overflow-hidden rounded-2xl border border-brand-border bg-white shadow-2xl shadow-brand-primary/15">
         <div className="flex items-center justify-between border-b border-brand-border/60 bg-brand-bg-alt/50 px-4 py-2.5">

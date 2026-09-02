@@ -41,7 +41,10 @@ export interface PainPoint {
   bullets: string[];
 }
 
-export interface ServiceCategoryItem extends FeatureCard {
+export interface ServiceCategoryItem {
+  icon: IconName;
+  title: string;
+  bullets: string[];
   tone: BenefitTone;
 }
 

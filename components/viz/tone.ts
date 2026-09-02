@@ -1,6 +1,14 @@
 import type { BenefitTone } from "@/lib/content/types";
 
-type ToneClass = { icon: string; badge: string; footer: string; hover: string; bullet: string };
+type ToneClass = {
+  icon: string;
+  badge: string;
+  footer: string;
+  hover: string;
+  bullet: string;
+  solid: string;
+  wash: string;
+};
 
 const brandPrimary: ToneClass = {
   icon: "bg-brand-primary/10 text-brand-primary",
@@ -8,6 +16,8 @@ const brandPrimary: ToneClass = {
   footer: "text-brand-primary",
   hover: "hover:border-brand-primary/40 hover:shadow-brand-primary/10",
   bullet: "bg-brand-primary",
+  solid: "bg-brand-primary text-white shadow-brand-primary/30",
+  wash: "from-brand-primary/12",
 };
 
 const brandSecondary: ToneClass = {
@@ -16,6 +26,8 @@ const brandSecondary: ToneClass = {
   footer: "text-brand-secondary",
   hover: "hover:border-brand-secondary/40 hover:shadow-brand-secondary/10",
   bullet: "bg-brand-secondary",
+  solid: "bg-brand-secondary text-white shadow-brand-secondary/30",
+  wash: "from-brand-secondary/12",
 };
 
 const brandAccent: ToneClass = {
@@ -24,6 +36,8 @@ const brandAccent: ToneClass = {
   footer: "text-brand-accent",
   hover: "hover:border-brand-accent/40 hover:shadow-brand-accent/10",
   bullet: "bg-brand-accent",
+  solid: "bg-brand-accent text-white shadow-brand-accent/30",
+  wash: "from-brand-accent/12",
 };
 
 const brandRisk: ToneClass = {
@@ -32,6 +46,8 @@ const brandRisk: ToneClass = {
   footer: "text-brand-risk",
   hover: "hover:border-brand-risk/40 hover:shadow-brand-risk/10",
   bullet: "bg-brand-risk",
+  solid: "bg-brand-risk text-white shadow-brand-risk/30",
+  wash: "from-brand-risk/10",
 };
 
 export const toneClasses: Record<BenefitTone, ToneClass> = {
