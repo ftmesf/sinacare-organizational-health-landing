@@ -16,10 +16,10 @@ export function PhysicalKit() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            امکانات فیزیکی سیناکر برای پایش سلامت در محل سازمان
+            سیناکر برای پایش سلامت از چه دستگاه‌هایی استفاده می‌کند؟
           </h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">
-            نرم‌افزار با تجهیزات میدانی همراه می‌شود تا داده واقعی، مستقیماً
+            نرم‌افزار با دستگاه‌های اندازه‌گیری همراه می‌شود تا داده واقعی، مستقیماً
             و بدون واسطه وارد پرونده دیجیتال هر پرسنل شود.
           </p>
         </div>

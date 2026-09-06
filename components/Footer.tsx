@@ -1,12 +1,13 @@
+import Link from "next/link";
 import { MapPin, Phone, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import { Logo } from "@/components/Logo";
 
 const quickLinks = [
-  "اپلیکیشن سیناکر",
-  "تماس با سیناکر",
-  "درباره سیناکر",
-  "شرایط و قوانین",
-  "گارانتی",
+  { label: "اپلیکیشن سیناکر", href: "/app" },
+  { label: "تماس با سیناکر", href: "/#contact" },
+  { label: "درباره سیناکر", href: null },
+  { label: "شرایط و قوانین", href: null },
+  { label: "گارانتی", href: null },
 ];
 
 const articleTopics = [
@@ -15,7 +16,7 @@ const articleTopics = [
   "سالمندی",
   "طب کار",
   "فشار خون",
-  "قند خون",
+  "قندخون",
   "کبد چرب",
   "مادر و کودک",
 ];
@@ -28,17 +29,26 @@ export function Footer() {
           <div>
             <Logo textClassName="text-lg font-extrabold text-white" />
             <p className="mt-3 text-sm leading-7 text-brand-bg-alt/70">
-              نرم‌افزار جامع طب کار و مدیریت دیجیتال سلامت سازمانی، متعلق به
-              شرکت راهکار هوشمند سینا.
+              سیناکر پرونده دیجیتال طب کار، پایش سلامت شغلی و تحلیل هوشمند
+              داده‌های سلامت کارکنان را در یک سامانه یکپارچه ارائه می‌دهد؛
+              محصولی از شرکت راهکار هوشمند سینا.
             </p>
           </div>
 
           <div>
             <p className="text-sm font-bold text-white">لینک‌های سریع</p>
             <ul className="mt-3 space-y-2 text-sm text-brand-bg-alt/70">
-              {quickLinks.map((link) => (
-                <li key={link}>{link}</li>
-              ))}
+              {quickLinks.map((link) =>
+                link.href ? (
+                  <li key={link.label}>
+                    <Link href={link.href} className="hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={link.label}>{link.label}</li>
+                ),
+              )}
             </ul>
           </div>
 

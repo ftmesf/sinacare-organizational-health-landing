@@ -63,10 +63,10 @@ export const serviceCategories: ServiceCategoryItem[] = [
     bullets: ["گزارش‌های سازمانی", "ریسک‌سنجی بیماری‌های مزمن", "چالش اصلاح سبک زندگی", "مراقبت تخصصی پزشکی"],
   },
   {
-    icon: "MonitorPlay",
+    icon: "Ruler",
     tone: "emerald",
-    title: "تجهیزات فیزیکی",
-    bullets: ["ایستگاه سلامت", "دستگاه تست قند خون", "فشارسنج دیجیتال", "آنالیز ترکیب بدن"],
+    title: "دستگاه‌های اندازه‌گیری",
+    bullets: ["ایستگاه سلامت", "دستگاه تست قندخون", "فشارسنج دیجیتال", "آنالیز ترکیب بدن"],
   },
 ];
 
@@ -101,7 +101,7 @@ export const selfCareApp: FeatureCard = {
   icon: "DeviceMobile",
   title: "اپلیکیشن خودمراقبتی فردی",
   description:
-    "هر کارمند با یک اپلیکیشن رایگان، داده‌های سلامت خودش را (فشار خون، قند خون، وزن و…) ثبت می‌کند و روند تغییرشان را می‌بیند — تا علائم بیماری‌های شغلی را زودتر از بروز تشخیص دهد.",
+    "هر کارمند با یک اپلیکیشن رایگان، داده‌های سلامت خودش را (فشار خون، قندخون، وزن و…) ثبت می‌کند و روند تغییرشان را می‌بیند — تا علائم بیماری‌های شغلی را زودتر از بروز تشخیص دهد.",
 };
 
 export const advancedServices: FeatureCard[] = [
@@ -139,8 +139,8 @@ export const physicalKit: FeatureCard[] = [
   },
   {
     icon: "Drop",
-    title: "دستگاه تست قند خون",
-    description: "اندازه‌گیری سریع و دوره‌ای قند خون، با ثبت خودکار نتیجه در پرونده سلامت فرد.",
+    title: "دستگاه تست قندخون دیجیتال",
+    description: "اندازه‌گیری سریع و دوره‌ای قندخون، با ثبت خودکار نتیجه در پرونده سلامت فرد.",
   },
   {
     icon: "Gauge",
@@ -157,7 +157,7 @@ export const physicalKit: FeatureCard[] = [
 export const trustedByPartners = [
   { name: "بانک صنعت و معدن", logo: "/images/partners/bank-sanat-o-madan.png" },
   { name: "شرکت صنایع پتروشیمی خلیج فارس (PGPIC/MECO)", logo: "/images/partners/pgpic-meco.png" },
-  { name: "ذیون؛ طب هوشمند (Zhione)", logo: "/images/partners/zhione-smart-medicine.png" },
+  { name: "ژیوان؛ طب هوشمند", logo: "/images/partners/zhione-smart-medicine.png" },
   { name: "شرکت صنایع معدنی فولاد سنگان (SMIC)", logo: "/images/partners/smic-foolad-sangan.png" },
   { name: "شرکت توسعه آهن و فولاد گل‌گهر", logo: "/images/partners/tosee-ahan-foolad-golgohar.png" },
   { name: "شرکت پتروشیمی پردیس", logo: "/images/partners/pardis-petrochemical.png" },

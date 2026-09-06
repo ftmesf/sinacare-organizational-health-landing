@@ -2,7 +2,7 @@ import { LeadsClient } from "@/components/LeadsClient";
 
 export const metadata = {
   robots: { index: false, follow: false },
-  title: "لیدهای سیناکر",
+  title: "لیدها",
 };
 
 export default function LeadsPage() {

@@ -15,7 +15,13 @@ export function PhotoFeatureCard({
       className="overflow-hidden rounded-2xl border border-brand-border/70 py-0 ring-0 shadow-none transition hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-primary/10 [--card-spacing:--spacing(5)]"
     >
       <div className="relative aspect-[4/3] w-full bg-brand-bg-alt">
-        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw"
+          className="object-cover"
+        />
       </div>
       <CardContent className="pt-4 pb-5">
         <h3 className="text-base font-bold text-brand-fg">{item.title}</h3>

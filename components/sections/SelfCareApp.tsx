@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { selfCareApp } from "@/lib/content/services";
 import { FeatureIcon } from "@/components/viz/FeatureIcon";
 import { Badge } from "@/components/ui/badge";
 import { PhoneMockup } from "@/components/viz/PhoneMockup";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, DeviceMobile } from "@phosphor-icons/react/dist/ssr";
 
 export function SelfCareApp() {
   return (
@@ -31,13 +32,22 @@ export function SelfCareApp() {
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">
                   {selfCareApp.description}
                 </p>
-                <a
-                  href="#contact"
-                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary transition hover:gap-2.5"
-                >
-                  فعال‌سازی اپلیکیشن برای سازمانم
-                  <ArrowLeft size={16} weight="bold" />
-                </a>
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary transition hover:gap-2.5"
+                  >
+                    فعال‌سازی اپلیکیشن برای سازمانم
+                    <ArrowLeft size={16} weight="bold" />
+                  </a>
+                  <Link
+                    href="/app"
+                    aria-label="مشاهده صفحه اپلیکیشن سیناکر"
+                    className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary transition hover:bg-brand-primary/20"
+                  >
+                    <DeviceMobile size={16} weight="bold" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
