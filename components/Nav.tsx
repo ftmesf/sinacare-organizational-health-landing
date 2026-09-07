@@ -10,6 +10,7 @@ const links = [
   { href: "#services", label: "خدمات" },
   { href: "#benefits", label: "مزایا" },
   { href: "#pricing", label: "طرح‌ها" },
+  { href: "#faq", label: "سوالات متداول" },
   { href: "#contact", label: "تماس" },
 ];
 

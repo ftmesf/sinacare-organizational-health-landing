@@ -26,6 +26,7 @@ import {
   HourglassMedium,
   Scan,
   MagnifyingGlass,
+  Ruler,
 } from "@phosphor-icons/react/dist/ssr";
 import type { IconProps } from "@phosphor-icons/react";
 import type { IconName } from "@/lib/content/types";
@@ -58,6 +59,7 @@ const registry: Record<IconName, React.ComponentType<IconProps>> = {
   HourglassMedium,
   Scan,
   MagnifyingGlass,
+  Ruler,
 };
 
 export function FeatureIcon({

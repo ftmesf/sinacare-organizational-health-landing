@@ -25,7 +25,8 @@ export type IconName =
   | "Books"
   | "HourglassMedium"
   | "Scan"
-  | "MagnifyingGlass";
+  | "MagnifyingGlass"
+  | "Ruler";
 
 export interface FeatureCard {
   icon: IconName;

@@ -11,6 +11,7 @@ import { AdvancedServices } from "@/components/sections/AdvancedServices";
 import { PhysicalKit } from "@/components/sections/PhysicalKit";
 import { PricingTable } from "@/components/sections/PricingTable";
 import { TrustedBy } from "@/components/sections/TrustedBy";
+import { Faq } from "@/components/sections/Faq";
 import { CtaBar } from "@/components/sections/CtaBar";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <PhysicalKit />
         <PricingTable />
         <TrustedBy />
+        <Faq />
         <CtaBar />
       </main>
       <Footer />

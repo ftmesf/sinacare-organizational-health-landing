@@ -11,15 +11,15 @@ export function ServiceCategories() {
             نقشه خدمات سیناکر
           </span>
           <h2 className="mt-2 text-2xl font-extrabold text-brand-fg sm:text-3xl">
-            سیناکر چهار دسته خدمت ارائه می‌دهد
+            سیناکر چه خدماتی ارائه می‌دهد؟
           </h2>
           <span
             aria-hidden
             className="brand-gradient-bg animate-flow-line mx-auto mt-4 block h-1 w-16 rounded-full"
           />
           <p className="mt-4 text-base leading-8 text-muted-foreground">
-            از زیرساخت نرم‌افزاری تا اپلیکیشن فردی، خدمات تخصصی و تجهیزات
-            فیزیکی؛ در ادامه هر دسته را با جزئیات می‌بینید.
+            از زیرساخت نرم‌افزاری تا اپلیکیشن فردی، خدمات تخصصی و دستگاه‌های
+            اندازه‌گیری؛ در ادامه هر دسته را با جزئیات می‌بینید.
           </p>
         </div>
 

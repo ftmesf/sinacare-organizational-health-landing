@@ -26,6 +26,7 @@ export const pricingTiers: PricingTier[] = [
     key: "gold",
     name: "طلایی",
     tagline: "کامل‌ترین راهکار: اپلیکیشن سازمانی، آموزش سلامت، تحلیل‌های جامع و افزودن خودکار آزمایش‌ها (OCR).",
+    highlighted: true,
   },
 ];
 
